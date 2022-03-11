@@ -1,5 +1,5 @@
 import React from 'react';
-import {  pantalones, camisas, vestidos } from './strings.js';
+import { home, pantalones, camisas, vestidos, destacado, colección } from './strings.js';
 
 const NavBar = () => {
     return <div>
@@ -15,14 +15,14 @@ const NavBar = () => {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="#"> <span>{home}</span></a>
         </li>
         <li class="nav-itemTwo">
-          <a class="nav-link" href="#">Lo más visto</a>
+          <a class="nav-link" href="#"> <span>{destacado}</span> </a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Indumentaria
+          <span>{colección}</span> 
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">  <span>{vestidos}</span> </a></li>
