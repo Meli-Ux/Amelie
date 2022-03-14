@@ -3,6 +3,15 @@ import './componentes/NavBar';
 import './App.css';
 import NavBar from './componentes/NavBar';
 
+import ItemListColeccion from './componentes/ItemListContainer';
+
+
+const coleccionFuncion = {
+  temporada: 'Primavera Verano',
+  descripcion: 'Colección casual-sport',
+  
+};
+
 
 function App() {
   return (
@@ -10,7 +19,23 @@ function App() {
       <header className="App-header">
       <NavBar />
       </header>
+
+      <main>
+   <div className='mainContenedor'>
+      <ItemListColeccion 
+       temporada ={coleccionFuncion.temporada}
+       descripcion={coleccionFuncion.  descripcion}    
+      />
+    
+</div>
+
+
+      </main>
+  
+      
+
     </div>
+    
   );
 }
 

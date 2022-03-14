@@ -10,7 +10,7 @@ border-color: black;
 .App-header {
   display: flex;
   flex-flow: column nowrap;
-  height: 400px;
+  height: 200px;
 
 }
 .navBar{
@@ -53,9 +53,27 @@ border-color: black;
   border-radius: 08px;
   padding: 5px;
 }
+.cart{
+color: black;
+margin-right: 10px;
+}
 
+.CartLogo{
+  display: flex;
+  flex-flow: row nowrap;
 
+}
 
+.mainContenedor{
+  color: black;
+  display: flex;
+  flex-flow: column nowrap;
+
+}
+.tituloTercero{
+  font-size: 20px;
+  color: green;
+}
 @media only screen and (min-width:1201px){
 .navbar-nav{
   margin-left: 320px;
@@ -65,7 +83,7 @@ border-color: black;
   margin-right: 10px;
 }
 .d-flex{
-  margin-right: 350px;
+  margin-right: 300px;
   margin-left: 20px;
 }
 
