@@ -42,20 +42,16 @@ const NavBar = () => {
 
         <button className="btn btn-outline-success" type="submit">Search</button>
       </form>
-
-    
-          <a className="nav-link" href="#"> <span> <CartWidget/> </span> </a>
-     
-   
+      <li className="nav-Cart">
+          <a className="nav-cart" href="#">  <span> <CartWidget/> </span></a>
+        </li>
     
     </div>
 
   </div>
 
 
-
 </nav>
-
 
     </div>;
   };
