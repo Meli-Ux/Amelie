@@ -1,12 +1,14 @@
 import React from 'react';
 import { home, pantalones, camisas, vestidos, destacado, colección } from './strings.js';
 import CartWidget from './CartWidget';
+import logo from '../imagenes/logoAmelie.png';
 
 const NavBar = () => {
     return <div>
     <div className = "NavLogo">    
-       <a href="#" className="logoApp" >AMELIE</a>
   
+       <img src={logo} className="App-logo" alt="logo" />
+
     </div>
           
 <nav className="navbar navbar-expand-lg  bg-light">
@@ -42,6 +44,8 @@ const NavBar = () => {
 
         <button className="btn btn-outline-success" type="submit">Search</button>
       </form>
+
+      
       <li className="nav-Cart">
           <a className="nav-cart" href="#">  <span> <CartWidget/> </span></a>
         </li>
@@ -49,8 +53,6 @@ const NavBar = () => {
     </div>
 
   </div>
-
-
 </nav>
 
     </div>;
