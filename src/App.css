@@ -102,22 +102,24 @@ margin-right: 10px;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-
   padding: 30px;
 
  
 }
 
 
-.contenedorCard{
+/*.contenedorCard{
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center; 
   padding: 20px;
   width: 100%;
-
+background-color: teal;
 }
+*/
+
+
 .contenedorCardInf{
   background-color: white;
   box-shadow: 0  2px 2px 2px rgba(0, 0, 0, 0.2);
@@ -125,11 +127,8 @@ margin-right: 10px;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-
   border-radius: 8px;
   height: 500px;
-
-
 }
 
 .imgProd{
@@ -149,20 +148,21 @@ height: 200px;
 
 }
 
-.contenedorInf{
+/*.contenedorInf{
   text-align: left;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+}*/
 
 
-}
 .contenedorConteo{
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: baseline;
+
 }
 .tituloProducto{
   font-family: 'Raleway', sans-serif;
@@ -196,6 +196,8 @@ flex:  1 1 auto;
   width:50%;
   height: 30px;
   margin-right: 110px;
+  margin-left: 18px;
+ 
 
 }
 .contador{
@@ -294,8 +296,13 @@ footer{
 
 
 .tituloColeccion{
-
-  width: 100%;
+display: flex;
+flex-flow: column nowrap;
+justify-content: center;
+align-items: center;
+background-color: aquamarine;
+height: 300px;
+width: 100%;
 }
 .contenedorCard{
 
@@ -304,14 +311,16 @@ footer{
  
 }
 
-.contenedorInfoCard{
-
+.contenedorItemList{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-right: 100px;
+  margin-left: 120px;
   gap: 20px;
- 
+ margin-top: 60px;
+ text-align: center;
 }
-
 
 
 .tituloProducto{

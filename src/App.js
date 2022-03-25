@@ -10,6 +10,7 @@ import ItemListColeccion from './componentes/ItemListContainer';
 const coleccionFuncion = {
   temporada: 'Primavera Verano',
   descripcion: ' casual-sport',
+
 };
 
 
@@ -27,7 +28,8 @@ function App() {
   <div className='mainContenedor'>
       <ItemListColeccion 
        temporada ={coleccionFuncion.temporada}
-       descripcion={coleccionFuncion.descripcion}    
+       descripcion={coleccionFuncion.descripcion}   
+       indumentaria={coleccionFuncion.indumentaria}   
       />
       
 

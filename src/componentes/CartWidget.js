@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const CartWidget = () => {
    return <div>
 <div className = "CartLogo">    
@@ -9,7 +10,7 @@ const CartWidget = () => {
 
 <div>
 
-<p> 1 </p>
+<p>1</p>
 
 </div>
 

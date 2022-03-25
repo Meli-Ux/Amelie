@@ -3,6 +3,7 @@ import { home, pantalones, camisas, vestidos, destacado, colección } from './st
 import CartWidget from './CartWidget';
 import logo from '../imagenes/logoAmelie.png';
 
+
 const NavBar = () => {
     return <div>
     <div className = "NavLogo">    

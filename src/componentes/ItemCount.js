@@ -1,34 +1,24 @@
 import React, { useState } from 'react';
 
 
-
 const Cart = ( {stock , initial, onAdd}) => {
-  const [contador, setContador] = useState(initial);
-
+  const [contador, setContador] = useState(0);
   
-const clickSum = () =>{
+const addToCount = () =>{
 
-  if( contador === stock ){
-    return;
+  if( contador < stock ){
+    setContador((prevCount) => prevCount + 1);
   } 
-  
-  setContador(contador + 1);
-
-
  };
 
-
- const clickRest = () =>{
+ const substractToCount = () =>{
   if( contador === 0 ){
     return;
   } 
-
-  setContador(contador - initial);
-
+  if( contador  > 0 ) {
+    setContador((prevCount) => prevCount - 1);
+  } 
  };
-
-
-
 
 const addToCart = () => {
 onAdd(contador);
@@ -38,17 +28,15 @@ onAdd(contador);
 
 return <div  className='contadorCart'>
 
-
 <div className = "ContenedorContador">    
-<button onClick={() => clickSum()} type="button" class="btnCard btnW btn-secondary">+</button>
+<button onClick={addToCount} type="button" class="btnCard btnW btn-secondary">+</button>
 <p className='contador'>{contador}</p>
-<button  onClick={() => clickRest()} type="button" class="btnCard btn-secondary">-</button>
+<button  onClick={substractToCount} type="button" class="btnCard btn-secondary">-</button>
   </div>   
 
   <div> 
-   <button onClick={() => addToCart()} type="button" class="btnCarrito">ADD</button></div>
-
-   
+   <button onClick={addToCart} type="button" class="btnCarrito">ADD</button></div>
     </div>;
   };
+
   export default Cart;
