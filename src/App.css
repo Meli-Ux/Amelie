@@ -441,7 +441,7 @@ margin-top: -80px;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 10px;
-  width: 100%;
+  width: 50%;
 }
 .imgDetail{
   width: 60%;
