@@ -1,15 +1,15 @@
-import React, {useEffect, useState} from 'react';
-import prod01 from '../imagenes/hippieNegroCorto.png';
-import ItemList  from './ItemList';
 
-const ItemListColeccion = ({ temporada,  descripcion,indumentaria }) => {
+import prod01 from '../../imagenes/hippieNegroCorto.png'
+import prod02 from '../../imagenes/niuEstampadoNegro2.png'
+import prod03 from '../../imagenes/vestidoCruzadoAzul.png'
+import prod04 from '../../imagenes/vestidoLunarRojo1.png'
+import detail01 from '../../imagenes/vestidoLunarRojo1.png'
 
-  const[listaProductos, setListaProductos] = useState([])
-  const [cargando,setCargando] = useState(false)
 
-  const productos = [
-    {   id: '1',
+ const productos = [
+    {   id: '01',
         img: prod01,
+     
         producto:'Vestido estampado ',
         precio: '5400 ARG',
         descripcion:'Vestido corte cuello redondo estampado hindu',
@@ -17,8 +17,8 @@ const ItemListColeccion = ({ temporada,  descripcion,indumentaria }) => {
        
     },
     
-    {   id: '2',
-        img: prod01,
+    {   id: '02',
+        img: prod02,
         producto:'Vestido estampado ',
         precio: '5400 ARG',
         descripcion:'Vestido corte cuello redondo estampado hindu',
@@ -27,23 +27,29 @@ const ItemListColeccion = ({ temporada,  descripcion,indumentaria }) => {
     },
     
     
-    {   id: '3',
-        img: prod01,
+    {   id: '03',
+        img: prod03,
+        imgDetail: detail01,
         producto:'Vestido estampado ',
         precio: '5400 ARG',
         descripcion:'Vestido corte cuello redondo estampado hindu',
-        btn:'Ver más'
+        descripcionDetail: 'Vestido corto de cuello redondo y manga larga acabada en elástico. Detalle de bordados y aplicación de hilo metalizado. Cierre en espalda con abertura y botón',
+        btn:'Ver más',
+        sizeS: 'S',
+        sizeM: 'M',
+        sizeL: 'L',
+        sizeXL: 'XL'
       
     },
-    {   id: '4',
-        img: prod01,
+    {   id: '04',
+        img: prod04,
         producto:'Vestido',
         precio: '5400 ARG',
         descripcion:'Vestido corte cuello redondo estampado hindu',
         btn:'Ver más'
     
     },
-    {   id: '5',
+    {   id: '05',
         img: prod01,
         producto:'Vestido estampado ',
         precio: '5400 ARG',
@@ -61,7 +67,7 @@ const ItemListColeccion = ({ temporada,  descripcion,indumentaria }) => {
     
     ];
 
-    const getProducts = new Promise((resolve, reject)=>{
+    export const getProducts = new Promise((resolve, reject)=>{
       let condition = true
       if(condition){
         setTimeout(()=>{
@@ -71,35 +77,3 @@ const ItemListColeccion = ({ temporada,  descripcion,indumentaria }) => {
         reject('Error de datos')
       }
     })
-//console.log(getProducts)
-    useEffect(()=>{
-      setCargando(true)
-      getProducts
-      .then((res)=> setListaProductos(res) )
-      .catch((error)=> console.log(error))
-      .finally(()=> setCargando(false))
-
-    },[])
-
-
-
-  
-  return (
-    <div className='itemColeccion'>
-
-      <div className='tituloColeccion'>
-      <h2>Colección</h2>
-      <h2 className='tituloTercero'>{temporada} </h2>
-      <p>{descripcion}</p>
-      </div>
-      <div className='contenedorItemList'>   
-      {cargando ? <p className='Cargando'>cargando</p> : <ItemList listaProductos= {listaProductos} />}   
-        </div>
-    </div>
-   
-  );
-
-
-};
-
-export default ItemListColeccion ;

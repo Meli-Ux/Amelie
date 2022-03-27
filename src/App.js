@@ -3,8 +3,7 @@ import './componentes/NavBar';
 import './App.css';
 import NavBar from './componentes/NavBar';
 import ItemListColeccion from './componentes/ItemListContainer';
-
-
+import ItemDetailContainer from "./componentes/ItemDetailContainer";
 
 
 const coleccionFuncion = {
@@ -13,34 +12,22 @@ const coleccionFuncion = {
 
 };
 
-
-
 function App() {
-
-
   return (
     <div className="App">
       <header className="App-header">
       <NavBar />
       </header>
 
-<main>
-  <div className='mainContenedor'>
+<main  className='mainContenedor'>
       <ItemListColeccion 
        temporada ={coleccionFuncion.temporada}
        descripcion={coleccionFuncion.descripcion}   
-       indumentaria={coleccionFuncion.indumentaria}   
+       
       />
-      
+      <ItemDetailContainer/>
 
-</div>
 </main>
-
-<footer>
-  
-</footer>
-  
-
     </div>
     
   );
