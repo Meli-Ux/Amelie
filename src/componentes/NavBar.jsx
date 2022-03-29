@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { home, pantalones, camisas, vestidos, destacado, colección } from './strings.js';
 import CartWidget from './CartWidget';
 import logo from '../imagenes/logoAmelie.png';
@@ -8,7 +9,7 @@ const NavBar = () => {
     return <div>
     <div className = "NavLogo">    
   
-       <img src={logo} className="App-logo" alt="logo" />
+     <Link  to="/"> <img src={logo} className="App-logo" alt="logo" /></Link> 
 
     </div>
           
@@ -20,21 +21,21 @@ const NavBar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/#"> <span>{home}</span></a>
+          <Link className="nav-link active" aria-current="page" to="/"> <span>{home}</span></Link>
         </li>
         <li className="nav-itemTwo">
-          <a className="nav-link" href="#/"> <span>{destacado}</span> </a>
+          <Link className="nav-link" to="/destacados"> <span>{destacado}</span> </Link>
         </li>
   
         <li className="nav-item dropdown">
-          <a  className   ="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <Link  className   ="nav-link dropdown-toggle" to="/#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <span>{colección}</span> 
-          </a>
+          </Link>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="{name}">  <span>{vestidos}</span> </a></li>
-            <li><a className="dropdown-item" href="/#">  <span>{camisas}</span> </a></li>
+            <li><Link className="dropdown-item" to="/category/vestido">  <span>{vestidos}</span> </Link></li>
+            <li><Link className="dropdown-item" to="/category/camisas">  <span>{camisas}</span> </Link></li>
             <li className="dropdown-divider"></li>
-            <li><a className="dropdown-item" href="/#">  <span>{pantalones}</span> </a></li>
+            <li><Link className="dropdown-item" to="/category/pantalones">  <span>{pantalones}</span> </Link></li>
           </ul>
         </li>
       
@@ -48,7 +49,7 @@ const NavBar = () => {
 
       
       <li className="nav-Cart">
-          <a className="nav-cart" href="/#">  <span> <CartWidget/> </span></a>
+          <Link className="nav-cart" to="/#">  <span> <CartWidget/> </span></Link>
         </li>
     
     </div>

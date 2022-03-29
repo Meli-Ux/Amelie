@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import Cart from "./ItemCount";
 
 const stock = 10;
@@ -8,16 +9,16 @@ const onAdd =(contador) =>{
 };
 
 const ItemDetail = ({productDetail}) =>{
-    const {img, producto, precio, imgDetail, descripcionDetail, sizeS } = productDetail
+   const {img, producto, precio, imgDetail, descripcionDetail, sizeS } = productDetail
   
     return(
         <div className="contenedorDetail">
            <div className="contenedorMuestraImg">
             <div className="contenedorMiniMuestra">
                 <div className="miniProduct">
-              <a href="{#/} "> <img className="imgDetail" src={ imgDetail} alt={producto} /></a> 
-              <a href="{#/} ">   <img className="imgDetail" src={img} alt={producto} /></a> 
-              <a href="{#/} ">  <img className="imgDetail" src={img} alt={producto} /></a> 
+              <Link to="/# "> <img className="imgDetail" src={ imgDetail} alt={producto} /></Link> 
+              <Link to="/# ">   <img className="imgDetail" src={img} alt={producto} /></Link> 
+              <Link to="/# ">  <img className="imgDetail" src={img} alt={producto} /></Link> 
                 </div>
             </div>
             <div className="contenedorProductoVista">
@@ -33,9 +34,9 @@ const ItemDetail = ({productDetail}) =>{
              <div className="contenedorTallas">
                  <p>Selecciona tu talla</p>
                  <div className="tallas">
-                    <a href={"#/"}><p className="talla">{sizeS} </p></a> 
-                    <a href={"#/"}><p className="talla">{sizeS} </p></a> 
-                    <a href={"#/"}><p className="talla">{sizeS} </p></a> 
+                    <Link to={"#/"}><p className="talla">{sizeS} </p></Link> 
+                    <Link to={"#/"}><p className="talla">{sizeS} </p></Link> 
+                    <Link to={"#/"}><p className="talla">{sizeS} </p></Link> 
                  </div>
              </div>
              <hr />

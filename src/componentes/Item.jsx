@@ -1,5 +1,7 @@
 import React from "react";
 import Cart from "./ItemCount";
+import { Link } from 'react-router-dom';
+
 
 const stock = 10;
 const initial =1;
@@ -28,7 +30,7 @@ return (
 </div>
 
     <div className="contenedorBtn">
- <button  className="btnCatalogo">{producto.btn} </button>
+<Link to={`/detail/${producto.id}`} > <button  className="btnCatalogo">{producto.btn} </button></Link>
     </div>
 </div>
 
