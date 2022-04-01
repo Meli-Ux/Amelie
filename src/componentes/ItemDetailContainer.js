@@ -6,23 +6,23 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () =>{
 const [productDetail, setProductDetail] = useState({})
-const [cargandin, setCargandin] = useState(false)
+const [cargando, setCargando] = useState(false)
 
 const {itemId} = useParams()
 
     useEffect(()=>{
-      setCargandin(true)
+      setCargando(true)
         getProducts
         .then((res) => setProductDetail(res.find((item) => item.id === itemId)))
         .catch((error) => console.log(error))
-        .finally(() => setCargandin(false))
+        .finally(() => setCargando(false))
 
     }, [])
    
 
     return(
         <div>
-            { cargandin ? <p>cargandin</p> : <ItemDetail productDetail={productDetail} /> }
+            { cargando ? <p>cargando</p> : <ItemDetail productDetail={productDetail} /> }
   
         </div>
     )

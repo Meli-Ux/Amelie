@@ -10,7 +10,7 @@ const CartWidget = () => {
 
 <div>
 
-<p>1</p>
+<spam>1</spam>
 
 </div>
 

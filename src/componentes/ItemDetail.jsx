@@ -44,7 +44,7 @@ const ItemDetail = ({productDetail}) =>{
 
              <div className="contenedorConteoCart">
              <p className="parrafoCantidad">Selecciona cantidad </p>
-    <div className="cartAdd" href={"#/"}>  <span> <Cart stock={stock} initial={initial} onAdd={onAdd} /> </span></div>
+    <div className="cartAdd" > <Cart stock={stock} initial={initial} onAdd={onAdd} /> </div>
  </div>
           
             </div>
