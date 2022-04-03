@@ -6,6 +6,7 @@ import ItemListColeccion from './componentes/ItemListContainer'
 import ItemDetailContainer from "./componentes/ItemDetailContainer"
 import {BrowserRouter,  Routes, Route} from 'react-router-dom'
 import ItemPortada from "./componentes/pages/ItemPortada"
+import ItemCartPage from "./componentes/pages/ItemCartPage"
 
 
 
@@ -28,6 +29,7 @@ function App() {
       <Route path="/destacados" element={ <ItemListColeccion />} />
       <Route path="/category/:categoryId" element={<ItemListColeccion />} />
       <Route path="/detail/:itemId" element={<ItemDetailContainer/>} />
+      <Route path="/cart" element={<ItemCartPage/>} />
 
 
     </Routes>

@@ -67,7 +67,7 @@ import detail01 from '../../imagenes/vestidoLunarRojo1.png'
     },
     {   id: '6',
         img: prod01,
-        producto:'Vestido',
+        producto:'Pantalon',
         precio: '5400 ARG',
         descripcion:'Vestido corte cuello redondo estampado hindu',
         btn:'Ver más',

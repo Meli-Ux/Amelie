@@ -1,15 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import Cart from "./ItemCount";
 import { Link } from 'react-router-dom';
 
 
 const stock = 10;
 const initial =1;
-const onAdd =(contador) =>{
-    console.log('click', contador);
-};
+
 
  const Item = ({producto}) => {
+
+
+
+    const [contador, setContador] = useState(0);
+    const onAdd =(contador ) =>{
+        console.log('cantidad', contador ,  producto);
+        };
 return (
 <div className="contenedorCardInf">
 <div className="infContenedor">
@@ -25,7 +30,7 @@ return (
 <p className="parrafoCard"> {producto.descripcion} </p>
 </div>
 <div className="contenedorConteo">
-    <div className="cartC" href={"#/"}>  <span> <Cart stock={stock} initial={initial} onAdd={onAdd} /> </span></div>
+    <div className="cartC" href={"#/"}>  <span> <Cart stock={stock} initial={initial} onAdd={onAdd} contador={contador} setContador= {setContador} /> </span></div>
  </div>
 </div>
 

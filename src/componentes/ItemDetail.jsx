@@ -1,15 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import Cart from "./ItemCount";
+import Select from "./select/select";
 
-const stock = 10;
+const stock = 9;
 const initial =1;
-const onAdd =(contador) =>{
-    console.log('click', contador);
-};
 
-const ItemDetail = ({productDetail}) =>{
-   const {img, producto, precio, imgDetail, descripcionDetail, sizeS } = productDetail
+const options =[
+    {value: 'rojo', text: 'Rojo'},
+    {value: 'verde', text: 'Verde'},
+    {value: 'blanco', text: 'Blanco'}
+
+]
+
+const ItemDetail = ({productDetail }) =>{
+
+const [contador, setContador] = useState(0);
+const [color, setColor]= useState('rojo')
+const {img, producto, precio, imgDetail, descripcionDetail, sizeS } = productDetail
+
+
+const onAdd =(contador) =>{
+
+    const itemToAdd = {
+        color,
+        producto,
+        precio,
+        img
+       
+    }
+console.log(contador,itemToAdd);
+
+};
   
     return(
         <div className="contenedorDetail">
@@ -40,11 +62,18 @@ const ItemDetail = ({productDetail}) =>{
                  </div>
              </div>
              <hr />
+             <Select 
+    
+             options={options}
+             onSelect={setColor}
+             
+             
+             />
              </div>
 
              <div className="contenedorConteoCart">
              <p className="parrafoCantidad">Selecciona cantidad </p>
-    <div className="cartAdd" > <Cart stock={stock} initial={initial} onAdd={onAdd} /> </div>
+    <div className="cartAdd" > <Cart stock={stock} initial={initial} onAdd={onAdd} contador={contador} setContador= {setContador} /> </div>
  </div>
           
             </div>

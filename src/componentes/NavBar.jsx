@@ -49,7 +49,7 @@ const NavBar = () => {
 
       
       <li className="nav-Cart">
-          <Link className="nav-cart" to="/#">  <span> <CartWidget/> </span></Link>
+          <span> <CartWidget/> </span>
         </li>
     
     </div>

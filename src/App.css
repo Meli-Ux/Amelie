@@ -300,7 +300,7 @@ width: 100%;
 .contenedorConteoCart{
   margin-top: 10px;
   margin-right: 30px;
-  width: 80%;
+
 }
 
 .parrafoCantidad{
@@ -421,7 +421,7 @@ margin-top: -80px;
 }
 .contador{
   width: 100%;
-  margin-top: 20px;
+
 }
 
 /*----------------------------detail--------------------*/
@@ -538,7 +538,7 @@ margin-top: -80px;
   }
   .contador{
     width: 100%;
-    margin-top: 20px;
+
   }
   
   /*----------------------------contenedorDetailProduct---------------------*/
