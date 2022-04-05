@@ -1,4 +1,4 @@
-import React, { useState }  from "react"
+import React from "react"
 import './componentes/NavBar'
 import './App.css'
 import NavBar from './componentes/NavBar'
@@ -7,7 +7,8 @@ import ItemDetailContainer from "./componentes/ItemDetailContainer"
 import {BrowserRouter,  Routes, Route} from 'react-router-dom'
 import ItemPortada from "./componentes/pages/ItemPortada"
 import ItemCartPage from "./componentes/pages/ItemCartPage"
-import { CartContext } from "./componentes/context/CartContext"
+import { CartProvider } from "./componentes/context/CartContext"
+
 
 
 
@@ -22,28 +23,11 @@ const coleccionFuncion = {
 
 function App() {
 
-const [cart, setCart]= useState([])
 
-const addItem = (item) =>{
-  setCart([...cart, item, isInCart])
-}
-
-
-
-
- const isInCart = id => {
-  return cart.some([prod => prod === id]) // EL ID ME ROMPE EL CODIGO
- }
 
   return (
+    <CartProvider>
 
-   < CartContext.Provider value={{
-     cart,
-     addItem,
-     isInCart
-     
-     }}>
-   
  <BrowserRouter>
  <NavBar />
 <Routes>
@@ -55,12 +39,11 @@ const addItem = (item) =>{
       <Route path="/category/:categoryId" element={<ItemListColeccion />} />
       <Route path="/detail/:itemId" element={<ItemDetailContainer/>} />
       <Route path="/cart" element={<ItemCartPage/>} />
-
-
     </Routes>
     </BrowserRouter>
+    </CartProvider>
 
-    </CartContext.Provider>
+   
   
    
   );

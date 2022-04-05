@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from './context/CartContext';
 
 const CartWidget = () => {
+
+  const {cartQuantity} = useContext(CartContext)
+
+
    return <div>
 <div className='CartLogo' >    
   <Link to="/cart" className='cart'>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-cart3" viewBox="0 0 16 16">
@@ -10,7 +15,7 @@ const CartWidget = () => {
 
 <div>
 
-<spam>1</spam>
+<spam>{cartQuantity()}</spam>
 
 </div>
 

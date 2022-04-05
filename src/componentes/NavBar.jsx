@@ -32,10 +32,10 @@ const NavBar = () => {
           <span>{colección}</span> 
           </Link>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link className="dropdown-item" to="/category/vestido">  <span>{vestidos}</span> </Link></li>
-            <li><Link className="dropdown-item" to="/category/camisas">  <span>{camisas}</span> </Link></li>
+            <li><Link className="dropdown-item" to="/#">  <span>{vestidos}</span> </Link></li>
+            <li><Link className="dropdown-item" to="/#">  <span>{camisas}</span> </Link></li>
             <li className="dropdown-divider"></li>
-            <li><Link className="dropdown-item" to="/category/pantalones">  <span>{pantalones}</span> </Link></li>
+            <li><Link className="dropdown-item" to="/#">  <span>{pantalones}</span> </Link></li>
           </ul>
         </li>
       

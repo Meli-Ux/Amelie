@@ -5,13 +5,7 @@ import Cart from "./ItemCount";
 import Select from "./select/select";
 
 
-
-
-
-
 const stock = 9;
-const initial =1;
-
 
 const options =[
     {value: 'rojo', text: 'Rojo'},
@@ -20,17 +14,16 @@ const options =[
 
 ]
 
-const ItemDetail = ({productDetail }) =>{
+const ItemDetail = ({ productDetail }) =>{
 
 
-const { cart ,addItem, isInCart } = useContext(CartContext)
+const { addItem, isInCart } = useContext(CartContext)
 
-console.log(cart)
-//console.log(isInCart(id))ROMPE EL CODIGO
+//console.log(isInCart(productDetail.id))
 
-const [contador, setContador] = useState();
+const [contador, setContador] = useState(0);
 const [color, setColor]= useState('rojo')
-const {id, img, producto, precio, imgDetail, descripcionDetail, sizeS } = productDetail
+const {id , img, producto, precio, imgDetail, descripcionDetail, sizeS } = productDetail
 
 
 const agregarAlcarrito =(contador) =>{
@@ -45,7 +38,7 @@ const agregarAlcarrito =(contador) =>{
         
     }
 
-addItem(itemToAdd)
+   addItem(itemToAdd)
 
 };
   
@@ -91,23 +84,23 @@ addItem(itemToAdd)
              <p className="parrafoCantidad">Selecciona cantidad </p>
 
  </div>
- {
-     !isInCart //el agregar (id) me rompe el codigo
-     ?
-     
-    <Cart stock={stock} 
- 
+
+{
+    !isInCart(productDetail.id)
+    ?
+        
+    <Cart 
+    stock={stock} 
     onAdd={agregarAlcarrito} 
     addToCart = {contador} 
     setContador= {setContador}/>
-    : <Link to="/cartProd" className="cartProductos" >Terminar mi compra</Link>
- }
 
 
+    : <Link to="/cart" className="cartProductos" >Terminar mi compra</Link>
+ 
 
-
-
-          
+}
+ 
 
 
             </div>
