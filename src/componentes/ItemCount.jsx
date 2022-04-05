@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 const Cart = ( {stock , onAdd}) => {
-  const [contador, setContador] = useState(0);
+const [contador, setContador] = useState(0);
   
 const addToCount = () =>{
 

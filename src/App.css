@@ -306,6 +306,12 @@ width: 100%;
 .parrafoCantidad{
   text-align: left;
 }
+
+.cartProductos{
+  background-color: aqua;
+  padding: 10px 20px;
+ 
+}
 @media only screen and (min-width:1201px){
 .navbar-nav{
   margin-left: 300px;

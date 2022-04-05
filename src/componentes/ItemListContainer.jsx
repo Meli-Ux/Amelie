@@ -1,10 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
+
 import ItemList  from './ItemList';
 import { getProducts } from './mocks/FakeApi';
 
 
-const ItemListColeccion = ({ temporada,  descripcion }) => {
+const ItemListColeccion = () => {
+
 
   const[listaProductos, setListaProductos] = useState([])
   const [cargando,setCargando] = useState(false)

@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from 'react-router-dom';
+import { CartContext } from "./context/CartContext";
 import Cart from "./ItemCount";
 import Select from "./select/select";
 
+
+
+
+
+
 const stock = 9;
 const initial =1;
+
 
 const options =[
     {value: 'rojo', text: 'Rojo'},
@@ -15,21 +22,30 @@ const options =[
 
 const ItemDetail = ({productDetail }) =>{
 
-const [contador, setContador] = useState(0);
+
+const { cart ,addItem, isInCart } = useContext(CartContext)
+
+console.log(cart)
+//console.log(isInCart(id))ROMPE EL CODIGO
+
+const [contador, setContador] = useState();
 const [color, setColor]= useState('rojo')
-const {img, producto, precio, imgDetail, descripcionDetail, sizeS } = productDetail
+const {id, img, producto, precio, imgDetail, descripcionDetail, sizeS } = productDetail
 
 
-const onAdd =(contador) =>{
+const agregarAlcarrito =(contador) =>{
 
     const itemToAdd = {
+        id,
         color,
         producto,
         precio,
-        img
-       
+        img,
+        contador
+        
     }
-console.log(contador,itemToAdd);
+
+addItem(itemToAdd)
 
 };
   
@@ -73,9 +89,27 @@ console.log(contador,itemToAdd);
 
              <div className="contenedorConteoCart">
              <p className="parrafoCantidad">Selecciona cantidad </p>
-    <div className="cartAdd" > <Cart stock={stock} initial={initial} onAdd={onAdd} contador={contador} setContador= {setContador} /> </div>
+
  </div>
+ {
+     !isInCart //el agregar (id) me rompe el codigo
+     ?
+     
+    <Cart stock={stock} 
+ 
+    onAdd={agregarAlcarrito} 
+    addToCart = {contador} 
+    setContador= {setContador}/>
+    : <Link to="/cartProd" className="cartProductos" >Terminar mi compra</Link>
+ }
+
+
+
+
+
           
+
+
             </div>
         </div>
     )
