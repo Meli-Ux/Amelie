@@ -21,12 +21,13 @@ const { addItem, isInCart } = useContext(CartContext)
 
 //console.log(isInCart(productDetail.id))
 
-const [contador, setContador] = useState(0);
+const [contador, setContador] = useState(0)
 const [color, setColor]= useState('rojo')
-const {id , img, producto, precio, imgDetail, descripcionDetail, sizeS } = productDetail
+const {id , img, producto, precio, imgDetail, descripcionDetail, stockDestacados } = productDetail
 
 
 const agregarAlcarrito =(contador) =>{
+
 
     const itemToAdd = {
         id,
@@ -38,9 +39,10 @@ const agregarAlcarrito =(contador) =>{
         
     }
 
-   addItem(itemToAdd)
 
-};
+   contador > 0 &&  addItem(itemToAdd) 
+
+}
   
     return(
         <div className="contenedorDetail">
@@ -64,43 +66,51 @@ const agregarAlcarrito =(contador) =>{
             <hr />
              <div className="contenedorTallas">
                  <p>Selecciona tu talla</p>
-                 <div className="tallas">
-                    <Link to={"#/"}><p className="talla">{sizeS} </p></Link> 
-                    <Link to={"#/"}><p className="talla">{sizeS} </p></Link> 
-                    <Link to={"#/"}><p className="talla">{sizeS} </p></Link> 
-                 </div>
+                 <Select   
+    options={options}
+    onSelect={setColor}     
+    />
+
+    <div>
+        <p>Stock disponible {stockDestacados} </p>
+    
+        {stockDestacados === 0 && <p className="stockCantidad"> Item sin stock</p>  }
+    
+     
+    </div>
+            
              </div>
              <hr />
-             <Select 
     
-             options={options}
-             onSelect={setColor}
-             
-             
-             />
              </div>
 
-             <div className="contenedorConteoCart">
-             <p className="parrafoCantidad">Selecciona cantidad </p>
+ {
+   stockDestacados > 0 &&
+   <>
+   
+   <p className="parrafoCantidad">Selecciona cantidad </p>
 
- </div>
-
-{
+   {
     !isInCart(productDetail.id)
-    ?
-        
+    ?      
     <Cart 
     stock={stock} 
     onAdd={agregarAlcarrito} 
     addToCart = {contador} 
     setContador= {setContador}/>
-
-
     : <Link to="/cart" className="cartProductos" >Terminar mi compra</Link>
- 
+    
+}
+</>
+
 
 }
- 
+
+
+
+<div className="contenedorConteoCart">
+             <Link to="/destacados" className="cartProductos" >Volver</Link>
+ </div>
 
 
             </div>

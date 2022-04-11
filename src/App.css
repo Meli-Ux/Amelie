@@ -193,7 +193,6 @@ flex:  1 1 auto;
   border-color: gray;
   border-radius: 8px;
   border-width: 1px;
-
 }
 
 .btnCarrito{
@@ -343,6 +342,10 @@ width: 100%;
 
 .contendorMapInf{
  width: 100%;
+}
+
+.stockCantidad{
+  color: red;
 }
 @media only screen and (min-width:1201px){
 .navbar-nav{

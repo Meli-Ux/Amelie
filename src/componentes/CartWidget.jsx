@@ -15,7 +15,7 @@ const CartWidget = () => {
 
 <div>
 
-<spam>{cartQuantity()}</spam>
+<spam>{cartQuantity()|| ''}</spam>
 
 </div>
 

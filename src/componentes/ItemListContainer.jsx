@@ -33,6 +33,7 @@ const ItemListColeccion = () => {
 
   
   return (
+
     <div className='itemColeccion'>
 <div className='destacadosSelect'>
     <li className="destacados-item dropdown">
@@ -47,8 +48,15 @@ const ItemListColeccion = () => {
           </ul>
         </li>
 </div>
+
       <div className='contenedorItemListas'>   
-      {cargando ? <p className='Cargando'>cargando</p> : <ItemList listaProductos= {listaProductos} />}   
+      {
+        
+      cargando
+       ? <p className='Cargando'>cargando</p> 
+      : <ItemList listaProductos= {listaProductos} />
+      
+      }   
         </div>
     </div>
    

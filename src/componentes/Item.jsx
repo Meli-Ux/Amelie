@@ -1,22 +1,11 @@
-import React, {useState} from "react";
-import Cart from "./ItemCount";
+
+
 import { Link } from 'react-router-dom';
 
-
-const stock = 10;
-const initial =1;
 
 
  const Item = ({producto}) => {
 
-
-
-    const [contador, setContador] = useState(0);
-    const onAdd =(contador ) =>{
-        console.log('cantidad', contador ,  producto);
-        };
-
-        
 return (
 
 <div className="contenedorCardInf">

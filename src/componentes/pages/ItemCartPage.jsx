@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
-
+import { Link } from 'react-router-dom';
 
 const ItemCartPage = () => {
 
@@ -9,8 +9,19 @@ const ItemCartPage = () => {
 
   console.log(cart)
 
+  if(cart.length === 0){
+    return <div>
+      <h2>Tu carrito esta vacio</h2>
+      <hr />
+      <h5> Vuelve al shop de compras </h5>
+      <Link to={"/destacados"}> Volver </Link>
+
+    </div>
+  }
+
   return (
     <div className='itemCartPage'>
+
    <h1>Tus compras</h1>
    <hr/>
 

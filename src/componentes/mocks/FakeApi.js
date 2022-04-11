@@ -15,7 +15,8 @@ import detail01 from '../../imagenes/vestidoLunarRojo1.png'
         descripcion:'Vestido corte cuello redondo estampado hindu',
         descripcionDetail: 'Vestido corto de cuello redondo y manga larga acabada en elástico. Detalle de bordados y aplicación de hilo metalizado. Cierre en espalda con abertura y botón',
         btn:'Ver más',
-        category:'camisas'
+        category:'camisas',
+        stockDestacados: '12'
        
     },
     
@@ -27,7 +28,8 @@ import detail01 from '../../imagenes/vestidoLunarRojo1.png'
         descripcion:'Vestido corte cuello redondo estampado hindu',
         descripcionDetail: 'Vestido corto de cuello redondo y manga larga acabada en elástico. Detalle de bordados y aplicación de hilo metalizado. Cierre en espalda con abertura y botón',
         btn:'Ver más',
-        category:'camisas'
+        category:'camisas',
+        stockDestacados: 0
        
     },
     
@@ -44,7 +46,8 @@ import detail01 from '../../imagenes/vestidoLunarRojo1.png'
         sizeM: 'M',
         sizeL: 'L',
         sizeXL: 'XL',
-        category:'vestido'
+        category:'vestido',
+        stockDestacados: '20'
       
     },
     {   id: '04',
@@ -53,7 +56,8 @@ import detail01 from '../../imagenes/vestidoLunarRojo1.png'
         precio: '5400 ',
         descripcion:'Vestido corte cuello redondo estampado hindu',
         btn:'Ver más',
-        category:'vestido'
+        category:'vestido',
+        stockDestacados: 0
     
     },
     {   id: '05',
@@ -62,7 +66,9 @@ import detail01 from '../../imagenes/vestidoLunarRojo1.png'
         precio: '5400 ',
         descripcion:'Vestido corte cuello redondo estampado hindu',
         btn:'Ver más',
-        category:'pantalones'
+        category:'pantalones',
+        stockDestacados: '08'
+
         
     },
     {   id: '6',
@@ -71,7 +77,8 @@ import detail01 from '../../imagenes/vestidoLunarRojo1.png'
         precio: '5400 ',
         descripcion:'Vestido corte cuello redondo estampado hindu',
         btn:'Ver más',
-        category:'pantalones'
+        category:'pantalones',
+        stockDestacados: '10'
     },
     
     ];
