@@ -16,10 +16,7 @@ const options =[
 
 const ItemDetail = ({ productDetail }) =>{
 
-
 const { addItem, isInCart } = useContext(CartContext)
-
-//console.log(isInCart(productDetail.id))
 
 const [contador, setContador] = useState(0)
 const [color, setColor]= useState('rojo')

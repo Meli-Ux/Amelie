@@ -3,8 +3,7 @@ import React from 'react';
 
 
 const ItemPortada = ({ temporada,  descripcion }) => {
-
-  
+ 
   return (
     <div className='itemColeccion'>
 
@@ -15,6 +14,7 @@ const ItemPortada = ({ temporada,  descripcion }) => {
       </div>
 
     </div>
+    
    
   );
 

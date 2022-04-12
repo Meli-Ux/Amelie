@@ -2,9 +2,7 @@
 
 import { Link } from 'react-router-dom';
 
-
-
- const Item = ({producto}) => {
+const Item = ({producto}) => {
 
 return (
 

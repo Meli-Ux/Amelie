@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 import {  pantalones, camisas, vestidos, filtro } from './strings';
 import { Link } from 'react-router-dom';
 import ItemList  from './ItemList';
-import { getProducts } from './mocks/FakeApi';
+import { collection, getDocs, query, where} from 'firebase/firestore';
+import { db } from '../firebase/config';
+
 
 
 
@@ -17,17 +19,19 @@ const ItemListColeccion = () => {
 
     useEffect(()=>{
       setCargando(true)
-      getProducts
-      .then((res) => {
-        if(categoryId){
-          setListaProductos(res.filter((prod)=> prod.category ===  categoryId))
-        }else {
-          setListaProductos(res)
-        }
-      })
+     const productosRef = collection(db, "productos")
+ const q = categoryId ? query(productosRef,where('category','==',categoryId)) : productosRef
 
-      .catch((error)=> console.log(error))
-      .finally(()=> setCargando(false))
+     getDocs(q)
+       .then(resp => {
+         const items = resp.docs.map((doc)=> ({id: doc.id,...doc.data ()}))
+         console.log(items)
+         setListaProductos(items)
+       })
+       .finally(()=>{
+         setCargando(false)
+       })
+
 
     },[categoryId])
 

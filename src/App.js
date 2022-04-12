@@ -24,7 +24,6 @@ const coleccionFuncion = {
 function App() {
 
 
-
   return (
     <CartProvider>
 
