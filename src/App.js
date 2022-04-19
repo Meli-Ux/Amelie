@@ -8,17 +8,15 @@ import {BrowserRouter,  Routes, Route} from 'react-router-dom'
 import ItemPortada from "./componentes/pages/ItemPortada"
 import ItemCartPage from "./componentes/pages/ItemCartPage"
 import { CartProvider } from "./componentes/context/CartContext"
-
-
-
+import Checkout from "./componentes/Checkout/Checkout"
 
 
 
 
 const coleccionFuncion = {
   temporada: 'Primavera Verano',
-  descripcion: ' casual-sport',
-
+  descripcion: 'Magia, amanecer y colores',
+  moda: 'Tendencia a cada paso ',
 };
 
 function App() {
@@ -32,18 +30,17 @@ function App() {
 <Routes>
     <Route path="/" element={<ItemPortada
      temporada ={coleccionFuncion.temporada}
-     descripcion={coleccionFuncion.descripcion}     
+     descripcion={coleccionFuncion.descripcion} 
+     moda={coleccionFuncion.moda}       
     />}/>
       <Route path="/destacados" element={ <ItemListColeccion />} />
       <Route path="/category/:categoryId" element={<ItemListColeccion />} />
       <Route path="/detail/:itemId" element={<ItemDetailContainer/>} />
       <Route path="/cart" element={<ItemCartPage/>} />
+      <Route path="/Checkout" element={<Checkout/>} />
     </Routes>
     </BrowserRouter>
     </CartProvider>
-
-   
-  
    
   );
 }

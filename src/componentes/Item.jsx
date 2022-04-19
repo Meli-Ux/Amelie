@@ -9,7 +9,7 @@ return (
 <div className="contenedorCardInf">
 <div className="infContenedor">
     <div className="imgCard">
-<img src={producto.img} className="imgProd" alt="producto.producto" />  
+<img src={producto.img} className="imgProd" alt={producto.img}/>  
 </div>
 <hr></hr>
 <div className="contendorNombre">

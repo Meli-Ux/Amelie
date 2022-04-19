@@ -33,6 +33,7 @@ const ItemCartPage = () => {
          <div className='contendorMapInf'>
          <h4>{item.producto} </h4>
          <p>Cantidad: {item.contador} </p>
+      
          <h5>Precio: ${item.precio * item.contador}</h5>
     
          <button className='btnBasura' onClick={()=> removeItem(item.id)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -47,7 +48,8 @@ const ItemCartPage = () => {
    } 
    <h3>total: ${cartTotal()} </h3>
    <hr/>
-   <button className='btnVaciar' onClick={emptyCart }> Vaciar Carrito</button>
+   <button className='btnVaciar' onClick={emptyCart}> Vaciar Carrito</button>
+   <Link to={"/checkout"} className='btnVaciar' > Terminar mi compra </Link>
 
     </div>
    
