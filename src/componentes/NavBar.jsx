@@ -8,9 +8,7 @@ import logo from '../imagenes/logoAmelie.png';
 const NavBar = () => {
     return <div>
     <div className = "NavLogo">    
-  
      <Link  to="/"> <img src={logo} className="App-logo" alt="logo" /></Link> 
-
     </div>
           
 <nav className="navbar navbar-expand-lg  ">

@@ -1,10 +1,10 @@
 import { useContext, useState } from "react"
 import { db } from "../../firebase/config"
 import { Link } from 'react-router-dom';
-import { collection,addDoc,Timestamp, doc, updateDoc, getDoc, documentId } from "firebase/firestore"
+import { collection,addDoc,Timestamp, doc, updateDoc, getDoc } from "firebase/firestore"
 import { CartContext } from "../context/CartContext"
 import { Navigate } from "react-router-dom"
-
+import imgOrder from '../../imagenes/imgOrder.png';
 const Checkout = () =>{
     const {cart, cartTotal, emptyCart} = useContext(CartContext)
 
@@ -63,23 +63,32 @@ const handleSubmit = (e) => {
 
    addDoc(ordersRef, orden)
     .then((doc)=>{
-       console.log(doc.id)
+     
        setOrderId(doc.id)
        emptyCart()
     })
 }
 
 
+
 if (orderId){
     return <div className="contenedorOrderId">
-        <h2>Su orden fue realizada con exito</h2>
-        <hr/>
-    <Link to="/" > Ir a página principal</Link>
+        <div className="orderId">
+        <img src={imgOrder} className="imgOrder" alt="logo" />
+        <h2 className="tituloOrderId">Su orden fue realizada con exito</h2>
+      
+    <Link className="btnOrderId" to="/" > Ir a página principal</Link>
     </div>
-}if (cart.length === 0) {
-    return <Navigate to="/"/>
+    </div>
+}  
 
+if (cart.length === 0) {
+    return <Navigate to="/"/>
 }
+
+
+
+
     return (
         <div className="checkOut">
             <h1 className="NameCheckOut">Checkout</h1>

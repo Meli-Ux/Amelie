@@ -9,7 +9,7 @@ import ItemPortada from "./componentes/pages/ItemPortada"
 import ItemCartPage from "./componentes/pages/ItemCartPage"
 import { CartProvider } from "./componentes/context/CartContext"
 import Checkout from "./componentes/Checkout/Checkout"
-
+import Footer from "../src/componentes/pages/footer"
 
 
 
@@ -39,9 +39,10 @@ function App() {
       <Route path="/cart" element={<ItemCartPage/>} />
       <Route path="/Checkout" element={<Checkout/>} />
     </Routes>
+    <Footer />
     </BrowserRouter>
     </CartProvider>
-   
+
   );
 }
 
