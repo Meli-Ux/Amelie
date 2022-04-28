@@ -1,16 +1,16 @@
 import React from 'react';
 
 
-export const   home = "home"
+export const   home = "Home"
 export const   destacado = "Destacados"
 export const   filtro = "Filtro"
-export const  colección = "indumentaria"
-export const   vestidos = "vestidos"
-export const  camisas = "camisas"
+export const  colección = "Indumentaria"
+export const   vestidos = "Vestidos"
+export const  camisas = "Camisas"
 export  const pantalones = "Pantalones"
-export  const instagram = "instagram"
-export  const facebook = "facebook"
-export  const pinterest = "pinterest"
+export  const instagram = "Instagram"
+export  const facebook = "Facebook"
+export  const pinterest = "Pinterest"
 
 
 

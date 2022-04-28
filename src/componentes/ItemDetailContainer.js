@@ -15,8 +15,7 @@ const {itemId} = useParams()
       setCargando(true)
       const docRef = doc(db, "productos",itemId)
       getDoc(docRef)
-      .then(doc => {
-          
+      .then(doc => { 
           setProductDetail({id: doc.id, ...doc.data()})
       })
 

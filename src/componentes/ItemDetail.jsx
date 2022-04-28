@@ -5,12 +5,14 @@ import Cart from "./ItemCount";
 import Select from "./select/select";
 
 
-const stock = 9;
+const stock = 15;
 
 const options =[
-    {value: 'rojo', text: 'Rojo'},
-    {value: 'verde', text: 'Verde'},
-    {value: 'blanco', text: 'Blanco'}
+    {value: 'talleS', text: ' S'},
+    {value: 'talleM', text:  '  M'},
+    {value: 'talleL', text: ' L'},
+    {value: 'talleXl', text: ' XL'}
+
 
 ]
 
@@ -19,8 +21,8 @@ const ItemDetail = ({ productDetail }) =>{
 const { addItem, isInCart } = useContext(CartContext)
 
 const [contador, setContador] = useState(0)
-const [color, setColor]= useState('rojo')
-const {id , img, producto, precio, imgDetail, descripcionDetail, stockDestacados } = productDetail
+const [talle, setTalle]= useState('S')
+const {id , img, producto, precio,  descripcionDetail, stockDestacados } = productDetail
 
 
 const agregarAlcarrito =(contador) =>{
@@ -28,7 +30,7 @@ const agregarAlcarrito =(contador) =>{
 
     const itemToAdd = {
         id,
-        color,
+        talle,
         producto,
         precio,
         img,
@@ -44,32 +46,32 @@ const agregarAlcarrito =(contador) =>{
     return(
         <div className="contenedorDetail">
            <div className="contenedorMuestraImg">
-            <div className="contenedorMiniMuestra">
                 <div className="miniProduct">
-              <Link to="/# "> <img className="imgDetail" src={ imgDetail} alt={producto} /></Link> 
+              <Link to="/# "> <img className="imgDetail" src={ img} alt={producto} /></Link> 
               <Link to="/# ">   <img className="imgDetail" src={img} alt={producto} /></Link> 
               <Link to="/# ">  <img className="imgDetail" src={img} alt={producto} /></Link> 
                 </div>
-            </div>
+         
             <div className="contenedorProductoVista">
            <img className="productoI" src={img} alt={producto} />
         </div>
+
            </div>
             <div className="detailProduct">
                 <div className="contenedorInfDetail">
             <h2 className="tituloDetail">{producto} </h2> 
             <p className="descripcionProducto"> {descripcionDetail} </p>
             <p className="precioDetail"> {precio} </p>
-            <hr />
+          
              <div className="contenedorTallas">
-                 <p>Selecciona tu talla</p>
+                 <p className="seleccionTalla">SELECCIONA TU TALLA</p>
                  <Select   
     options={options}
-    onSelect={setColor}     
+    onSelect={setTalle}     
     />
 
     <div>
-        <p>Stock disponible {stockDestacados} </p>
+        <p className="stockDisponible">Stock disponible {stockDestacados} </p>
     
         {stockDestacados === 0 && <p className="stockCantidad"> Item sin stock</p>  }
     
@@ -85,7 +87,7 @@ const agregarAlcarrito =(contador) =>{
    stockDestacados > 0 &&
    <>
    
-   <p className="parrafoCantidad">Selecciona cantidad </p>
+
 
    {
     !isInCart(productDetail.id)
@@ -95,7 +97,7 @@ const agregarAlcarrito =(contador) =>{
     onAdd={agregarAlcarrito} 
     addToCart = {contador} 
     setContador= {setContador}/>
-    : <Link to="/cart" className="cartProductos" >Terminar mi compra</Link>
+    : <Link to="/cart" className="compraProductos" >Terminar mi compra</Link>
     
 }
 </>

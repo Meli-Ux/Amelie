@@ -39,6 +39,9 @@ const ItemListColeccion = () => {
   return (
 
     <div className='itemColeccion'>
+      <div className='contenedorColeccion'>
+        <h1 className='coleccionTitulo'>COLECCIÓN 2022</h1>
+      </div>
 <div className='destacadosSelect'>
     <li className="destacados-item dropdown">
           <Link  className   ="nav-link dropdown-toggle" to="/#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

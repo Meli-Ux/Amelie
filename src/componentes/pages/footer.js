@@ -6,10 +6,9 @@ import { instagram, facebook,pinterest } from '../strings';
 const Footer = () =>{
     return <div>
      <footer class="footer">
-     <div className = "footerLogo">    
-     <Link  to="/"> <img src={logo} className="App-logo" alt="logo" /></Link> 
-    </div>
+    
     <div className='redesFooter'>
+    <Link  to="/"> <img src={logo} className="App-logo" alt="logo" /></Link> 
     <Link className="nav-link active" aria-current="page" to="/"> <span>{instagram}</span></Link>
     <Link className="nav-link active" aria-current="page" to="/"> <span>{facebook}</span></Link>
     <Link className="nav-link active" aria-current="page" to="/"> <span>{pinterest}</span></Link>

@@ -27,8 +27,8 @@ onAdd(contador);
 
 
 return <div  className='contadorCart'>
-
-<div className = "ContenedorContador">    
+<p className='seleccionProd'>SELECCIONA CANTIDAD</p>  
+<div className = "ContenedorContador">  
 <button onClick={addToCount} type="button" className={ contador < stock  ? "btn btn-outline-primary" : "btn btn-outline-danger"}>+</button>
 <span className='contador'>{contador}</span>
 <button  onClick={substractToCount} type="button" className={ contador > 1 ? "btn btn-outline-primary" : "btn btn-outline-danger"}>-</button>

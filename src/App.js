@@ -13,10 +13,12 @@ import Footer from "../src/componentes/pages/footer"
 
 
 
+
 const coleccionFuncion = {
   temporada: 'Primavera Verano',
   descripcion: 'Magia, amanecer y colores',
   moda: 'Tendencia a cada paso ',
+  tendencia: ' Elige tu estilo',
 };
 
 function App() {
@@ -31,7 +33,8 @@ function App() {
     <Route path="/" element={<ItemPortada
      temporada ={coleccionFuncion.temporada}
      descripcion={coleccionFuncion.descripcion} 
-     moda={coleccionFuncion.moda}       
+     moda={coleccionFuncion.moda}   
+     tendencia={coleccionFuncion.tendencia}         
     />}/>
       <Route path="/destacados" element={ <ItemListColeccion />} />
       <Route path="/category/:categoryId" element={<ItemListColeccion />} />
